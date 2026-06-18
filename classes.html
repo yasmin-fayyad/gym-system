@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes - FitZone Gym</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">FitZone</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Our Classes</h1>
+        <p>Choose from a variety of fitness classes tailored to your goals</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <section class="classes" style="padding-top: 20px;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <button class="btn btn-primary filter-btn active" onclick="filterClasses('all')" data-filter="all">All Classes</button>
+                <button class="btn btn-outline filter-btn" onclick="filterClasses('cardio')" data-filter="cardio">Cardio</button>
+                <button class="btn btn-outline filter-btn" onclick="filterClasses('strength')" data-filter="strength">Strength</button>
+                <button class="btn btn-outline filter-btn" onclick="filterClasses('flexibility')" data-filter="flexibility">Flexibility</button>
+                <button class="btn btn-outline filter-btn" onclick="filterClasses('mind-body')" data-filter="mind-body">Mind & Body</button>
+            </div>
+
+            <!-- Classes Grid -->
+            <div class="classes-grid">
+                <!-- HIIT Class -->
+                <div class="class-card" data-category="cardio">
+                    <div class="class-header">
+                        <h3>🔥 HIIT Training</h3>
+                        <div class="trainer">Trainer: Alex Johnson</div>
+                    </div>
+                    <div class="class-body">
+                        <div class="class-info">
+                            <span>⏱️ 45 min</span>
+                            <span>🔥 High Intensity</span>
+                        </div>
+                        <div class="class-info">
+                            <span>📅 Mon, Wed, Fri</span>
+                            <span>🕖 6:00 AM & 6:00 PM</span>
+                        </div>
+                        <p class="class-description">High-Intensity Interval Training designed to boost your metabolism and burn maximum calories in minimal time. Perfect for those looking for quick, effective workouts.</p>
+                        <button class="btn btn-primary" onclick="selectPlan('HIIT Training')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Spinning Class -->
+                <div class="class-card" data-category="cardio">
+                    <div class="class-header">
+                        <h3>🚴 Spinning</h3>
+                        <div class="trainer">Trainer: Maria Garcia</div>
+                    </div>
+                    <div class="class-body">
+                        <div class="class-info">
+                            <span>⏱️ 60 min</span>
+                            <span>🔥 Moderate</span>
+                        </div>
+                        <div class="class-info">
+                            <span>📅 Tue, Thu, Sat</span>
+                            <span>🕖 7:00 AM & 5:30 PM</span>
+                        </div>
+                        <p class="class-description">Indoor cycling class with energetic music and motivated instructors. Build endurance, strength, and have fun while getting a great cardio workout.</p>
+                        <button class="btn btn-primary" onclick="selectPlan('Spinning')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Zumba Class -->
+                <div class="class-card" data-category="cardio">
+                    <div class="class-header">
+                        <h3>💃 Zumba</h3>
+                        <div class="trainer">Trainer: Carlos Rodriguez</div>
+                    </div>
+                    <div class="class-body">
+                        <div class="class-info">
+                            <span>⏱️ 50 min</span>
+                            <span>🔥 High Energy</span>
+                        </div>
+                        <div class="class-info">
+                            <span>📅 Wed & Fri</span>
+                            <span>🕖 6:30 PM</span>
+                        </div>
+                        <p class="class-description">Dance your way to fitness! Zumba combines Latin and international music with dance moves. Fun, energetic, and an amazing cardio workout.</p>
+                        <button class="btn btn-primary" onclick="selectPlan('Zumba')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Strength Training -->
+                <div class="class-card" data-category="strength">
+                    <div class="class-header">
+                        <h3>💪 Strength Training</h3>
+                        <div class="trainer">Trainer: Mike Thompson</div>
+                    </div>
+                    <div class="class-body">
+                        <div class="class-info">
+                            <span>⏱️ 60 min</span>
+                            <span>💪 Heavy Weights</span>
+                        </div>
+                        <div class="class-info">
+                            <span>📅 Mon, Wed, Fri</span>
+                            <span>🕖 7:00 AM & 6:30 PM</span>
+                        </div>
+                        <p class="class-description">Build muscle and increase strength with our comprehensive strength training program. Suitable for all fitness levels from beginners to advanced.</p>
+                        <button class="btn btn-primary" onclick="selectPlan('Strength Training')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- CrossFit -->
+                <div class="class-card" data-category="strength">
+                    <div class="class-header">
+                        <h3>⚡ CrossFit</h3>
+                        <div class="trainer">Trainer: Sarah Chen</div>
+                    </div>
+                    <div class="class-body">
+                        <div class="class-info">
+                            <span>⏱️ 55 min</span>
+                            <span>🔥 Extreme</span>
+                        </div>
+                        <div class="class-info">
+                            <span>📅 Tue, Thu, Sat, Sun</span>
+                            <span>🕖 6:00 AM & 5:00 PM</span>
+                        </div>
+                        <p class="class-description">Functional fitness at its finest. Combine weightlifting, gymnastics, and metabolic conditioning. Build a strong community while pushing your limits.</p>
+                        <button class="btn btn-primary" onclick="selectPlan('CrossFit')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Pilates -->
+                <div class="class-card" data-category="strength">
+                    <div class="class-header">
+                        <h3>🧘‍♀️ Pilates</h3>
+                        <div class="trainer">Trainer: Emma White</div>
+                    </div>
+                    <div class="class-body">
+                        <div class="class-info">
+                            <span>⏱️ 50 min</span>
+                            <span>💪 Core Focus</span>
+                        </div>
+                        <div class="class-info">
+                            <span>📅 Mon, Wed, Fri</span>
+                            <span>🕖 9:00 AM & 4:00 PM</span>
+                        </div>
+                        <p class="class-description">Strengthen your core, improve flexibility, and develop better posture. Pilates focuses on controlled movements and breathing techniques.</p>
+                        <button class="btn btn-primary" onclick="selectPlan('Pilates')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Yoga -->
+                <div class="class-card" data-category="flexibility">
+                    <div class="class-header">
+                        <h3>🧘 Yoga</h3>
+                        <div class="trainer">Trainer: Lisa Patel</div>
+                    </div>
+                    <div class="class-body">
+                        <div class="class-info">
+                            <span>⏱️ 60 min</span>
+                            <span>🌿 Mindful</span>
+                        </div>
+                        <div class="class-info">
+                            <span>📅 Daily</span>
+                            <span>🕖 7:30 AM & 6:00 PM</span>
+                        </div>
+                        <p class="class-description">Find balance, strength, and peace through yoga. Our classes range from gentle beginner-friendly sessions to more challenging flows.</p>
+                        <button class="btn btn-primary" onclick="selectPlan('Yoga')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Stretching & Flexibility -->
+                <div class="class-card" data-category="flexibility">
+                    <div class="class-header">
+                        <h3>🤸 Stretching & Flexibility</h3>
+                        <div class="trainer">Trainer: David Kim</div>
+                    </div>
+                    <div class="class-body">
+                        <div class="class-info">
+                            <span>⏱️ 45 min</span>
+                            <span>🌿 Relaxing</span>
+                        </div>
+                        <div class="class-info">
+                            <span>📅 Tue, Thu, Sat</span>
+                            <span>🕖 8:00 AM & 7:00 PM</span>
+                        </div>
+                        <p class="class-description">Improve your flexibility and mobility. Ideal for recovery days or as a complement to your regular training routine.</p>
+                        <button class="btn btn-primary" onclick="selectPlan('Stretching & Flexibility')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Meditation -->
+                <div class="class-card" data-category="mind-body">
+                    <div class="class-header">
+                        <h3>🧠 Meditation</h3>
+                        <div class="trainer">Trainer: James Wilson</div>
+                    </div>
+                    <div class="class-body">
+                        <div class="class-info">
+                            <span>⏱️ 30 min</span>
+                            <span>🌿 Calming</span>
+                        </div>
+                        <div class="class-info">
+                            <span>📅 Daily</span>
+                            <span>🕖 7:00 AM & 8:00 PM</span>
+                        </div>
+                        <p class="class-description">Reduce stress and improve mental clarity. Guided meditation sessions to help you relax and find inner peace.</p>
+                        <button class="btn btn-primary" onclick="selectPlan('Meditation')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Boxing -->
+                <div class="class-card" data-category="cardio">
+                    <div class="class-header">
+                        <h3>🥊 Boxing</h3>
+                        <div class="trainer">Trainer: Tony Martinez</div>
+                    </div>
+                    <div class="class-body">
+                        <div class="class-info">
+                            <span>⏱️ 50 min</span>
+                            <span>🔥 High Energy</span>
+                        </div>
+                        <div class="class-info">
+                            <span>📅 Mon, Wed, Fri</span>
+                            <span>🕖 6:30 PM</span>
+                        </div>
+                        <p class="class-description">Learn proper boxing techniques while getting an amazing workout. Build confidence, strength, and cardio endurance.</p>
+                        <button class="btn btn-primary" onclick="selectPlan('Boxing')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Dance Fitness -->
+                <div class="class-card" data-category="cardio">
+                    <div class="class-header">
+                        <h3>🎵 Dance Fitness</h3>
+                        <div class="trainer">Trainer: Nicole Brown</div>
+                    </div>
+                    <div class="class-body">
+                        <div class="class-info">
+                            <span>⏱️ 55 min</span>
+                            <span>🔥 Fun & Energetic</span>
+                        </div>
+                        <div class="class-info">
+                            <span>📅 Tue, Sat, Sun</span>
+                            <span>🕖 7:00 PM</span>
+                        </div>
+                        <p class="class-description">Combine dance and fitness for an incredibly fun workout. Perfect for those who love music and want to exercise with joy.</p>
+                        <button class="btn btn-primary" onclick="selectPlan('Dance Fitness')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Tai Chi -->
+                <div class="class-card" data-category="mind-body">
+                    <div class="class-header">
+                        <h3>☯️ Tai Chi</h3>
+                        <div class="trainer">Trainer: Robert Zhang</div>
+                    </div>
+                    <div class="class-body">
+                        <div class="class-info">
+                            <span>⏱️ 60 min</span>
+                            <span>🌿 Gentle</span>
+                        </div>
+                        <div class="class-info">
+                            <span>📅 Mon, Wed, Fri</span>
+                            <span>🕖 8:00 AM</span>
+                        </div>
+                        <p class="class-description">Ancient martial art focused on slow, flowing movements. Improve balance, flexibility, and mental clarity.</p>
+                        <button class="btn btn-primary" onclick="selectPlan('Tai Chi')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: linear-gradient(135deg, #0a0e27 0%, #004e89 100%); color: white; padding: 60px 20px; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Ready to Transform Your Body?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px;">Choose a membership plan and start your fitness journey today!</p>
+            <a href="membership.html" class="btn btn-primary">View Membership Plans</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FitZone</h3>
+                    <p>Your fitness journey starts here</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📧 info@fitzone.com</p>
+                    <p>📱 +1 (555) 123-4567</p>
+                    <p>📍 123 Fitness Ave, City, ST 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FitZone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
