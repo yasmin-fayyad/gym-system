@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Plans - FitZone Gym</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">FitZone</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Membership Plans</h1>
+        <p>Choose the perfect plan for your fitness goals</p>
+    </div>
+
+    <!-- Membership Section -->
+    <section class="membership">
+        <div class="container">
+            <h2>Our Flexible Membership Options</h2>
+            
+            <!-- Toggle for Monthly/Annual -->
+            <div style="text-align: center; margin-bottom: 50px;">
+                <label style="font-size: 1.1rem; font-weight: 600; color: #004e89;">
+                    <input type="radio" name="billing" value="monthly" checked> Monthly
+                    <input type="radio" name="billing" value="annual" style="margin-left: 30px;"> Annual (Save 20%)
+                </label>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Basic Plan -->
+                <div class="pricing-card">
+                    <div class="plan-name">Basic</div>
+                    <div class="plan-price">$29<span>/month</span></div>
+                    <div class="plan-duration">Perfect for beginners</div>
+                    <ul class="plan-features">
+                        <li>Gym access during business hours</li>
+                        <li>Access to cardio equipment</li>
+                        <li>Basic weight area</li>
+                        <li>Locker room access</li>
+                        <li>Email support</li>
+                        <li>Community access</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('Basic - $29/month')">Get Started</button>
+                </div>
+
+                <!-- Standard Plan (Featured) -->
+                <div class="pricing-card featured">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #ff6b35; color: white; padding: 5px 20px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">MOST POPULAR</div>
+                    <div class="plan-name">Standard</div>
+                    <div class="plan-price">$59<span>/month</span></div>
+                    <div class="plan-duration">Best for fitness enthusiasts</div>
+                    <ul class="plan-features">
+                        <li>24/7 gym access</li>
+                        <li>All cardio equipment</li>
+                        <li>Full weight training area</li>
+                        <li>Group fitness classes</li>
+                        <li>Locker room + shower access</li>
+                        <li>Personal training consultation</li>
+                        <li>Nutrition guidance</li>
+                        <li>Priority member support</li>
+                        <li>Guest pass (2 per month)</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('Standard - $59/month')">Get Started</button>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card">
+                    <div class="plan-name">Premium</div>
+                    <div class="plan-price">$99<span>/month</span></div>
+                    <div class="plan-duration">Ultimate fitness experience</div>
+                    <ul class="plan-features">
+                        <li>24/7 gym access</li>
+                        <li>All cardio & strength equipment</li>
+                        <li>Unlimited group fitness classes</li>
+                        <li>12 personal training sessions/month</li>
+                        <li>Sauna & steam room access</li>
+                        <li>VIP locker room</li>
+                        <li>Spa services discount (20%)</li>
+                        <li>Supplement store discount (15%)</li>
+                        <li>Unlimited guest passes</li>
+                        <li>24/7 priority support</li>
+                        <li>Nutrition plan customization</li>
+                        <li>Performance tracking</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('Premium - $99/month')">Get Started</button>
+                </div>
+
+                <!-- Corporate Plan -->
+                <div class="pricing-card">
+                    <div class="plan-name">Corporate</div>
+                    <div class="plan-price">$25<span>/month</span></div>
+                    <div class="plan-duration">For company employees</div>
+                    <ul class="plan-features">
+                        <li>24/7 gym access</li>
+                        <li>All equipment access</li>
+                        <li>Unlimited classes</li>
+                        <li>Group corporate events</li>
+                        <li>Wellness programs</li>
+                        <li>Employee discount 25%</li>
+                        <li>Team challenges</li>
+                        <li>Health seminars</li>
+                        <li>Flexible billing</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('Corporate - $25/month')">Contact Us</button>
+                </div>
+
+                <!-- Student Plan -->
+                <div class="pricing-card">
+                    <div class="plan-name">Student</div>
+                    <div class="plan-price">$19<span>/month</span></div>
+                    <div class="plan-duration">Valid student ID required</div>
+                    <ul class="plan-features">
+                        <li>Off-peak gym access</li>
+                        <li>All cardio equipment</li>
+                        <li>Weight training area</li>
+                        <li>Select group classes</li>
+                        <li>Locker room access</li>
+                        <li>Community events</li>
+                        <li>Student networking</li>
+                        <li>Email support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('Student - $19/month')">Get Started</button>
+                </div>
+
+                <!-- Day Pass -->
+                <div class="pricing-card">
+                    <div class="plan-name">Day Pass</div>
+                    <div class="plan-price">$15<span>/day</span></div>
+                    <div class="plan-duration">Try us out first</div>
+                    <ul class="plan-features">
+                        <li>24-hour gym access</li>
+                        <li>All equipment access</li>
+                        <li>Group fitness classes</li>
+                        <li>Locker room + shower</li>
+                        <li>No commitment</li>
+                        <li>Trial period available</li>
+                        <li>Free orientation</li>
+                        <li>Guest pass included</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('Day Pass - $15/day')">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Comparison -->
+    <section style="padding: 80px 0; background-color: #f8f9fa;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 50px; color: #004e89;">What's Included</h2>
+            
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                    <thead>
+                        <tr style="background-color: #004e89; color: white;">
+                            <th style="padding: 15px; text-align: left;">Feature</th>
+                            <th style="padding: 15px; text-align: center;">Basic</th>
+                            <th style="padding: 15px; text-align: center; background-color: #ff6b35;">Standard</th>
+                            <th style="padding: 15px; text-align: center;">Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;">24/7 Gym Access</td>
+                            <td style="text-align: center;">❌</td>
+                            <td style="text-align: center; background-color: rgba(255, 107, 53, 0.1);">✅</td>
+                            <td style="text-align: center;">✅</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;">All Equipment Access</td>
+                            <td style="text-align: center;">Partial</td>
+                            <td style="text-align: center; background-color: rgba(255, 107, 53, 0.1);">✅</td>
+                            <td style="text-align: center;">✅</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;">Unlimited Classes</td>
+                            <td style="text-align: center;">❌</td>
+                            <td style="text-align: center; background-color: rgba(255, 107, 53, 0.1);">✅</td>
+                            <td style="text-align: center;">✅</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;">Personal Training Sessions</td>
+                            <td style="text-align: center;">❌</td>
+                            <td style="text-align: center; background-color: rgba(255, 107, 53, 0.1);">Consultation</td>
+                            <td style="text-align: center;">12/month</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;">Sauna & Steam Room</td>
+                            <td style="text-align: center;">❌</td>
+                            <td style="text-align: center; background-color: rgba(255, 107, 53, 0.1);">❌</td>
+                            <td style="text-align: center;">✅</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;">Guest Passes</td>
+                            <td style="text-align: center;">❌</td>
+                            <td style="text-align: center; background-color: rgba(255, 107, 53, 0.1);">2/month</td>
+                            <td style="text-align: center;">Unlimited</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;">Nutrition Guidance</td>
+                            <td style="text-align: center;">❌</td>
+                            <td style="text-align: center; background-color: rgba(255, 107, 53, 0.1);">Basic</td>
+                            <td style="text-align: center;">Customized</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px;">Priority Support</td>
+                            <td style="text-align: center;">Email</td>
+                            <td style="text-align: center; background-color: rgba(255, 107, 53, 0.1);">Phone</td>
+                            <td style="text-align: center;">24/7 Dedicated</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 50px; color: #004e89;">Additional Services</h2>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Personal Training</div>
+                    <div class="plan-price">$60<span>/session</span></div>
+                    <ul class="plan-features">
+                        <li>1-on-1 coaching</li>
+                        <li>Custom workout plans</li>
+                        <li>Form correction</li>
+                        <li>Motivation & support</li>
+                        <li>Flexible scheduling</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('Personal Training')">Book Now</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-name">Nutrition Consultation</div>
+                    <div class="plan-price">$45<span>/session</span></div>
+                    <ul class="plan-features">
+                        <li>Personalized meal plans</li>
+                        <li>Nutritionist guidance</li>
+                        <li>Dietary assessment</li>
+                        <li>Follow-up support</li>
+                        <li>Email access</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('Nutrition Consultation')">Book Now</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-name">Body Composition Analysis</div>
+                    <div class="plan-price">$35<span>/session</span></div>
+                    <ul class="plan-features">
+                        <li>InBody scan</li>
+                        <li>Progress tracking</li>
+                        <li>Detailed report</li>
+                        <li>Goal setting</li>
+                        <li>Quarterly updates</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('Body Analysis')">Book Now</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-name">Group Training</div>
+                    <div class="plan-price">$25<span>/person</span></div>
+                    <ul class="plan-features">
+                        <li>Small group coaching</li>
+                        <li>Team building</li>
+                        <li>Shared accountability</li>
+                        <li>Cost-effective</li>
+                        <li>4-8 participants</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('Group Training')">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="padding: 80px 0; background-color: #f8f9fa;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 50px; color: #004e89;">Frequently Asked Questions</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="margin-bottom: 30px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h4 style="color: #004e89; margin-bottom: 10px; cursor: pointer;">Can I cancel my membership anytime?</h4>
+                    <p style="color: #666;">Yes! You can cancel anytime without penalties. We only require a 30-day notice for your final billing cycle.</p>
+                </div>
+
+                <div style="margin-bottom: 30px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h4 style="color: #004e89; margin-bottom: 10px; cursor: pointer;">Do you offer a free trial?</h4>
+                    <p style="color: #666;">Absolutely! We offer 7-day free trials for the Standard and Premium plans. Just bring a valid ID and speak with our staff.</p>
+                </div>
+
+                <div style="margin-bottom: 30px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h4 style="color: #004e89; margin-bottom: 10px; cursor: pointer;">Can I freeze my membership?</h4>
+                    <p style="color: #666;">Yes, you can freeze your membership for up to 3 months per year at no extra cost. Contact our support team for details.</p>
+                </div>
+
+                <div style="margin-bottom: 30px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h4 style="color: #004e89; margin-bottom: 10px; cursor: pointer;">Are there any initiation fees?</h4>
+                    <p style="color: #666;">No hidden fees! We occasionally offer deals with reduced or waived initiation fees. Ask about current promotions.</p>
+                </div>
+
+                <div style="margin-bottom: 30px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h4 style="color: #004e89; margin-bottom: 10px; cursor: pointer;">Do you offer group discounts?</h4>
+                    <p style="color: #666;">Yes! Groups of 5+ can get discounts up to 15%. Contact our corporate team for customized rates.</p>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h4 style="color: #004e89; margin-bottom: 10px; cursor: pointer;">What payment methods do you accept?</h4>
+                    <p style="color: #666;">We accept all major credit cards, debit cards, bank transfers, and digital wallets. Flexible payment plans available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: linear-gradient(135deg, #0a0e27 0%, #004e89 100%); color: white; padding: 60px 20px; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Join FitZone Today!</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px;">Start your transformation with a flexible membership plan that fits your lifestyle.</p>
+            <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FitZone</h3>
+                    <p>Your fitness journey starts here</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📧 info@fitzone.com</p>
+                    <p>📱 +1 (555) 123-4567</p>
+                    <p>📍 123 Fitness Ave, City, ST 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FitZone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
